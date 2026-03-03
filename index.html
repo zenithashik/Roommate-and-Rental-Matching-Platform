@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomieMatch - Find Your Perfect Roommate & Rental</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-logo">
+                    <i class="fas fa-home"></i> RoomieMatch
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="properties.html">Browse Properties</a></li>
+                    <li><a href="roommates.html">Find Roommates</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Perfect <span class="highlight">Roommate</span> & <span class="highlight">Rental</span></h1>
+                <p>Connect with compatible roommates and discover amazing rental properties that match your lifestyle and budget.</p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-tabs">
+                        <button class="tab-btn active" data-tab="rental">Find Rentals</button>
+                        <button class="tab-btn" data-tab="roommate">Find Roommates</button>
+                    </div>
+                    <div class="search-box">
+                        <div class="search-input-group">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Enter city, neighborhood, or property name">
+                        </div>
+                        <div class="search-input-group">
+                            <i class="fas fa-dollar-sign"></i>
+                            <select id="priceRange">
+                                <option value="">Price Range</option>
+                                <option value="0-500">$0 - $500</option>
+                                <option value="500-1000">$500 - $1000</option>
+                                <option value="1000-1500">$1000 - $1500</option>
+                                <option value="1500-2000">$1500 - $2000</option>
+                                <option value="2000+">$2000+</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary search-btn" onclick="searchProperties()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose RoomieMatch?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Smart Matching</h3>
+                    <p>Our algorithm matches you with compatible roommates based on lifestyle, preferences, and habits.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Verified Properties</h3>
+                    <p>All listings are verified to ensure safety, quality, and accurate information.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Platform</h3>
+                    <p>Your safety is our priority with verified profiles and secure messaging.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location Based</h3>
+                    <p>Find properties and roommates in your preferred neighborhoods and cities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="featured-properties">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Properties</h2>
+                <a href="properties.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="properties-grid" id="featuredProperties">
+                <!-- Properties will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Create Account</h3>
+                    <p>Sign up and create your profile with your preferences and lifestyle details.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-search"></i>
+                    <h3>Search & Match</h3>
+                    <p>Browse properties or find potential roommates that match your criteria.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-comments"></i>
+                    <h3>Connect</h3>
+                    <p>Message potential roommates or property owners to arrange viewings.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <i class="fas fa-home"></i>
+                    <h3>Move In</h3>
+                    <p>Find your perfect match and start your new living arrangement!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah">
+                    <p class="testimonial-text">"Found my perfect roommate in just 3 days! The matching algorithm really works."</p>
+                    <h4>Sarah Johnson</h4>
+                    <p class="location">New York, NY</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mike">
+                    <p class="testimonial-text">"Great platform for finding rental properties. Very user-friendly and secure."</p>
+                    <h4>Mike Chen</h4>
+                    <p class="location">San Francisco, CA</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Emily">
+                    <p class="testimonial-text">"The verification process gives peace of mind. Highly recommended!"</p>
+                    <h4>Emily Rodriguez</h4>
+                    <p class="location">Austin, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Find Your Perfect Match?</h2>
+            <p>Join thousands of happy roommates and property owners on RoomieMatch.</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn btn-primary btn-large">Get Started Now</a>
+                <a href="properties.html" class="btn btn-outline-light btn-large">Browse Listings</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>RoomieMatch</h4>
+                    <p>Find your perfect roommate and rental match with our smart platform.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="properties.html">Browse Properties</a></li>
+                        <li><a href="roommates.html">Find Roommates</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>For Landlords</h4>
+                    <ul>
+                        <li><a href="list-property.html">List Your Property</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact Sales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@roomiematch.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main St, Suite 100<br>San Francisco, CA 94105</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RoomieMatch. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
